@@ -1,0 +1,33 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.category-card {
+  max-width: 300px;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+.category-img {
+  background-size: cover;
+  max-height: 300px;
+}
+
+mat-card-actions button {
+  margin: 5px 5px 5px 5px;
+}
+
+.empty-data {
+  margin: 250px auto;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  padding: 25px 10px 10px 10px;
+  width: 300px;
+  background: #FF4081;
+  color: white;
+}
+

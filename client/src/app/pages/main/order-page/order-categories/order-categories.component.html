@@ -1,0 +1,24 @@
+<div *ngIf="categories$ | async as categories; else loader">
+  <div class="card" *ngIf="categories.length !== 0; else empty">
+    <mat-card class="category-card" *ngFor="let category of categories">
+      <mat-card-header>
+        <mat-card-title>{{ category.name }}</mat-card-title>
+        <mat-card-subtitle>Category</mat-card-subtitle>
+      </mat-card-header>
+      <img class="category-img" mat-card-image [src]="category.imagePath" alt="category">
+      <mat-card-actions>
+        <button mat-flat-button color="accent" [routerLink]="['/order', category._id]">OPEN</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #empty>
+  <div class="empty-data">
+    <h1>There are no categories</h1>
+  </div>
+</ng-template>
+
+<ng-template #loader>
+  <app-loader style="margin: 250px auto"></app-loader>
+</ng-template>

@@ -1,0 +1,96 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.order-page {
+  margin: 25px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.page-title h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.page-title h1 a:hover {
+  text-decoration: none;
+  color: #FF4081;
+}
+
+.add-order-btn button {
+  margin-top: 55px;
+  padding: 13px 20px 13px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-content {
+  margin-top: 5px;
+}
+
+.empty-data h5 {
+  margin-bottom: 20px;
+}
+
+.modal {
+  margin: 200px auto;
+  width: 700px;
+  height: 450px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.modal-content h4 {
+  margin: 30px auto 40px 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+.modal-content table {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 50px auto auto 25px;
+  max-width: 590px;
+}
+
+.modal-content table .remove-table-btn {
+  padding: 10px 5px 10px 5px;
+}
+
+.modal-content .order-total {
+  margin: 40px auto auto 27px;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.modal-footer button {
+  right: 10%;
+}
+
+.modal-footer .submit-btn {
+  padding: 12px 10px 12px 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.modal-footer .cancel-btn {
+  padding: 12px 10px 12px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,83 @@
+.new-category-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.page-title h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.page-title h1 a:hover {
+  text-decoration: none;
+  color: #FF4081;
+}
+
+.remove-category-btn button {
+  padding: 7px 16px 7px 16px;
+}
+
+.new-category-page .page-content {
+  display: flex;
+}
+
+.new-category-page .page-content .page-content-card {
+  width: 510px;
+  height: 200px;
+  margin: 60px auto auto 5px;
+}
+
+.page-content-card mat-card-content {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.mat-form-field-name {
+  width: 450px;
+  margin-left: 2%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.new-category-form-upload-btn {
+  margin-left: 10px;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}
+
+.new-category-form-btn {
+  margin-left: 18%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}
+
+.image-preview {
+  margin: 30px 300px;
+  padding: 10px 10px;
+  height: 250px;
+  width: 261px;
+  background: #E0E0E0;
+}
+
+.image-preview p {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 45%;
+}
+
+.image-preview img {
+  height: 250px;
+  width: 250px;
+}

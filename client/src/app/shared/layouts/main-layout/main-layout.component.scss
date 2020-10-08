@@ -1,0 +1,55 @@
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.sidenav-container mat-sidenav {
+  width: 18%;
+  background: #3F51B5;
+}
+
+.sidenav-container mat-sidenav .sidenav-title h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+  margin: 80px auto auto 50px;
+}
+
+.sidenav-container mat-sidenav .sidenav-links ul {
+  list-style: none;
+  margin: 70px auto auto -5px;
+}
+
+.sidenav-container mat-sidenav .sidenav-links ul li button {
+  color: white;
+  padding: 20px 165px 20px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.sidenav-container mat-sidenav .sidenav-links ul li.active button {
+  cursor: default;
+}
+
+.sidenav-container mat-sidenav .logout-btn button {
+  top: 300px;
+  bottom: 0;
+  left: 55px;
+  right: 0;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 5px 18px 5px 18px;
+}
+
+.menu-btn {
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  left: 95%;
+  top: 91%;
+}

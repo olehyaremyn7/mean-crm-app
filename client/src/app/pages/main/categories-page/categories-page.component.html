@@ -1,0 +1,44 @@
+<div class="category-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>Category</h1>
+    </div>
+
+    <div class="add-category-btn">
+      <button mat-raised-button color="accent" routerLink="/categories/new">New category</button>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list"
+         *ngIf="categories$ | async as categories; else loader">
+
+      <mat-list role="list"
+                *ngIf="categories.length !== 0; else empty">
+
+        <mat-list-item role="listitem"
+                       *ngFor="let category of categories">
+          <a [routerLink]="['/categories', category._id]">
+
+            {{ category.name }}
+
+            <mat-divider></mat-divider>
+          </a>
+        </mat-list-item>
+
+      </mat-list>
+
+      <ng-template #empty>
+        <div class="empty-data">
+          <h1>There are no categories
+            <br>Add new category</h1>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <ng-template #loader>
+      <app-loader style="margin: 250px auto"></app-loader>
+    </ng-template>
+
+  </div>
+</div>

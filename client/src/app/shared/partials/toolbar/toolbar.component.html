@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="assets/images/logo.png" alt="logo">
+    <span><a routerLink="/">Aligator CRM</a></span>
+    <ul class="toolbar-links">
+      <li routerLinkActive="active" class="li-btn">
+        <button mat-button [routerLink]="['/', 'login']">Login</button>
+      </li>
+      <li routerLinkActive="active">
+        <button mat-button [routerLink]="['/', 'registration']">Registration</button>
+      </li>
+    </ul>
+  </mat-toolbar-row>
+</mat-toolbar>
+

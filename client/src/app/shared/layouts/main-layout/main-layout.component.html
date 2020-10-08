@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <div class="sidenav-title">
+      <h1>Aligator CRM</h1>
+    </div>
+
+    <div class="sidenav-links">
+      <ul class="links">
+        <li *ngFor="let link of links" routerLinkActive="active">
+          <button [routerLink]="[link.url]" mat-button color="primary">{{link.name}}</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="logout-btn">
+      <button mat-raised-button color="accent" (click)="logout($event)">Logout</button>
+    </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <app-alert></app-alert>
+
+    <button class="menu-btn" mat-fab color="accent" [matMenuTriggerFor]="menu">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/order">
+        <mat-icon>assignment</mat-icon>
+        <span>Order</span>
+      </button>
+      <button mat-menu-item routerLink="/categories/new">
+        <mat-icon>list_alt</mat-icon>
+        <span>Category</span>
+      </button>
+    </mat-menu>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

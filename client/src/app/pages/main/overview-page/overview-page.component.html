@@ -1,0 +1,84 @@
+<div class="overview-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>Overview for yesterday</h1>
+      <h1 style="color: #3F51B5">{{ yesterday | date: 'dd.MM.yyyy' }}</h1>
+    </div>
+
+    <div class="overview-btn">
+      <button mat-raised-button color="accent" (click)="openDialog()">About</button>
+    </div>
+
+  </div>
+  <div class="page-content">
+    <div class="overview-cards">
+
+      <div class="cards" *ngIf="overview$ | async as data; else loader">
+
+        <div class="card-revenue">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Revenue:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="content-revenue-price">
+                <h2>$ {{ data.revenue.yesterday }}</h2>
+              </div>
+
+              <div class="content-revenue-percent">
+                <h2 [ngClass]="{'success': data.revenue.isHigher,
+                                'danger': !data.revenue.isHigher}">
+                  <mat-icon>{{ data.revenue.isHigher ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+                  {{ data.revenue.percent }} %
+                </h2>
+              </div>
+
+              <div class="content-revenue-info">
+                <p>
+                  Business revenue yesterday is {{ data.revenue.percent }}% {{ data.revenue.isHigher ? 'above' : 'below' }}
+                  average: {{ data.revenue.compare }}$ a day
+                </p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="card-orders">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Orders:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="content-orders-amount">
+                <h2>{{ data.orders.yesterday }} orders</h2>
+              </div>
+
+              <div class="content-orders-percent">
+                <h2 [ngClass]="{'success': data.orders.isHigher,
+                                'danger': !data.orders.isHigher}">
+                  <mat-icon>{{ data.orders.isHigher ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+                  {{ data.orders.percent }} %
+                </h2>
+              </div>
+
+              <div class="content-orders-info">
+                <p>
+                  Yesterday's number of orders is {{ data.orders.percent }}% {{ data.orders.isHigher ? 'above' : 'below' }}
+                  average: {{ data.orders.compare }} orders a day
+                </p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader style="margin: 250px auto"></app-loader>
+</ng-template>

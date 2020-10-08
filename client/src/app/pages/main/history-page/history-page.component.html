@@ -1,0 +1,45 @@
+<div class="history-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>History</h1>
+    </div>
+
+    <div class="add-category-btn">
+      <button [ngClass]="{'active' : isFilter, 'filtered': isFiltered()}"
+              (click)="isFilter = !isFilter"
+              mat-raised-button color="accent">Filter</button>
+    </div>
+  </div>
+  <div class="page-content">
+    <app-history-filter (filter)="apply($event)" *ngIf="isFilter"></app-history-filter>
+
+    <div class="page-reloading" *ngIf="!reloading; else reloadingLoader">
+      <div class="content" *ngIf="orders.length > 0; else empty">
+
+        <app-history-table [orders]="orders"></app-history-table>
+
+        <div class="page-btn" *ngIf="!noOrders">
+          <button mat-flat-button color="accent" (click)="loadMore()" *ngIf="!loading; else loader">Load more</button>
+        </div>
+
+        <ng-template #loader>
+          <app-loader style="margin: 250px auto"></app-loader>
+        </ng-template>
+
+      </div>
+
+      <ng-template #empty>
+        <div class="empty-data">
+          <h1>There are no categories
+            <br>Add new category</h1>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <ng-template #reloadingLoader>
+      <app-loader style="margin: 250px auto"></app-loader>
+    </ng-template>
+
+  </div>
+</div>

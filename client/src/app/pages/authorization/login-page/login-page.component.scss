@@ -1,0 +1,41 @@
+.login-form-card {
+  width: 600px;
+  height: 500px;
+  margin: 180px auto;
+}
+
+mat-card-header h1 {
+  margin: 65px auto;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+mat-card-content {
+  margin-top: 10px;
+}
+
+.mat-form-field-email {
+  width: 400px;
+  margin-left: 17%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-password {
+  width: 400px;
+  margin-left: 17%;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.signin-btn {
+  margin-left: 17%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}
+
+.about-btn {
+  position: fixed;
+  left: 96%;
+  top: 92%;
+}

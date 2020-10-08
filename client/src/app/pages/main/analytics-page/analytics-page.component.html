@@ -1,0 +1,34 @@
+<div class="analytics-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>Analytics</h1>
+    </div>
+
+    <div class="analytics-btn">
+      <button mat-raised-button color="accent" (click)="openDialog()">Info</button>
+    </div>
+  </div>
+  <div class="page-content">
+
+    <div class="analytics" [style.display]="pending ? 'none' : 'block'">
+
+      <div class="average-price">
+        <h2>Average check: <strong>{{ average }}$</strong></h2>
+      </div>
+
+      <div class="analytics-block-revenue">
+        <h2>Revenue:</h2>
+        <canvas #revenue></canvas>
+      </div>
+
+      <div class="analytics-block-orders">
+        <h2>Orders:</h2>
+        <canvas #orders></canvas>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-loader *ngIf="pending" style="margin: 250px auto"></app-loader>
+

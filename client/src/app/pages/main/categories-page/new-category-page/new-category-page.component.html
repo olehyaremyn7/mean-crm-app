@@ -1,0 +1,77 @@
+<div class="new-category-page">
+  <div class="page-header">
+    <div class="page-title">
+
+      <h1>
+        <a routerLink="/categories">Category </a>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        {{isNew ? 'New' : 'Edit'}} category
+      </h1>
+    </div>
+    <div class="remove-category-btn">
+      <button mat-raised-button color="accent"
+              *ngIf="!isNew"
+              (click)="remove()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="page-content">
+    <mat-card class="page-content-card">
+      <mat-card-content>
+        <div class="new-category-form">
+          <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+
+            <div
+              class="form-control"
+              [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+              <mat-form-field class="mat-form-field-name">
+                <mat-label for="email">Name</mat-label>
+                <input matInput
+                       formControlName="name"
+                       type="text"
+                       id="name"
+                       placeholder="Enter category name">
+                <mat-error
+                  *ngIf="form.get('name').touched && form.get('name').invalid"
+                  class="validation"
+                >
+                  <small *ngIf="form.get('name').errors.required">
+                    Please enter name
+                  </small>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="form-control">
+                <input type="file" style="display: none" #input [disabled]="form.disabled" (change)="fileUpload($event)">
+            </div>
+
+            <button (click)="fileInput()" class="new-category-form-upload-btn" mat-flat-button color="warn" type="button">
+              <mat-icon>cloud_upload</mat-icon> Upload an image
+            </button>
+
+            <button mat-flat-button color="accent"
+                    type="submit"
+                    class="new-category-form-btn"
+                    [disabled]="form.invalid || submitted">
+              Save changes
+            </button>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="image-preview" matRipple>
+      <p *ngIf="!imagePreview">Image preview</p>
+      <img class="preview-image" [src]="imagePreview" alt="preview" *ngIf="imagePreview">
+    </div>
+
+  </div>
+</div>
+
+<app-position [categoryId]="category._id"
+              *ngIf="category?._id">
+</app-position>
+
+

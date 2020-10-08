@@ -1,0 +1,88 @@
+<div class="position-component">
+  <div class="component-header">
+    <div class="component-title">
+      <h1>Positions</h1>
+    </div>
+
+    <div class="add-position-component-btn">
+      <button mat-raised-button color="accent" (click)="openModal()">New position</button>
+    </div>
+  </div>
+  <div class="component-content">
+    <div class="list" *ngIf="!loading; else loader">
+
+      <mat-list role="list"
+                *ngIf="positions.length !== 0; else empty">
+
+        <mat-list-item role="listitem"
+                       *ngFor="let position of positions">
+          <a>
+            <strong style="margin-right: 20px">
+            {{ position.name }}
+          </strong> |
+            <strong style="margin-left: 20px">{{ position.cost }}$</strong>
+          </a>
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="remove(position)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete</span>
+            </button>
+            <button mat-menu-item (click)="openPositionModal(position)">
+              <mat-icon>edit</mat-icon>
+              <span>Edit</span>
+            </button>
+          </mat-menu>
+
+          <mat-icon style="margin-left: 10px" [matMenuTriggerFor]="menu">more_vert</mat-icon>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+
+      <ng-template #empty>
+        <div class="empty-data">
+          <h5>There are no positions in this category
+            <br>Add new position</h5>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <ng-template #loader>
+      <app-loader></app-loader>
+    </ng-template>
+
+  </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="modal" #modal>
+    <div class="modal-content">
+      <h4 class="mb1">New position</h4>
+      <div class="input-field">
+        <input formControlName="name"
+               id="name"
+               type="text"
+               [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+        <label for="name">Name</label>
+        <span *ngIf="form.get('name').touched && form.get('name').invalid" class="helper-text red-text">
+          Please enter position name
+        </span>
+      </div>
+      <div class="input-field">
+        <input formControlName="cost"
+               id="cost"
+               type="number"
+               [ngClass]="{invalid: form.get('cost').touched && form.get('cost').invalid}">
+        <label for="cost">Cost</label>
+        <span *ngIf="form.get('cost').touched && form.get('cost').invalid" class="helper-text red-text">
+          Please enter position cost
+        </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="cancel()" class="cancel-btn" type="button" mat-flat-button color="warn">Cancel</button>
+      <button [disabled]="form.invalid || submitted" class="save-btn" type="submit" mat-flat-button color="accent">Save</button>
+    </div>
+  </div>
+</form>

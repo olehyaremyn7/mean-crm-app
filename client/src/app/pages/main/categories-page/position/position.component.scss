@@ -1,0 +1,112 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.position-component {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.component-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.component-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.add-position-component-btn button {
+  padding: 12px 30px 12px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.position-component .component-content .list {
+  margin: 70px auto;
+}
+
+.position-component .component-content .list mat-list mat-list-item {
+  padding: 10px 5px;
+  font-size: 25px;
+  font-weight: 400;
+  width: 99%;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.position-component .component-content .list mat-list mat-list-item a {
+  text-decoration: none;
+  color: #3F51B5;
+}
+
+.position-component .component-content .list mat-list mat-list-item a:hover {
+  text-decoration: none;
+  color: #FF4081;
+}
+
+.empty-data {
+  margin: 130px auto;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  padding: 25px 10px 10px 10px;
+  width: 300px;
+  background: #FF4081;
+  color: white;
+}
+
+.empty-data h5 {
+  margin-bottom: 20px;
+}
+
+.modal {
+  margin: 200px auto;
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.modal-content {
+  width: 600px;
+  height: 200px;
+}
+
+.modal-content h4 {
+  margin: 20px auto 40px 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+.modal-content .input-field {
+  width: 100%;
+  margin-left: 12%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  margin-top: 50px;
+  width: 600px;
+  height: 200px;
+}
+
+.modal-footer button {
+  right: 14%;
+}
+
+.modal-footer .save-btn {
+  padding: 12px 10px 12px 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.modal-footer .cancel-btn {
+  padding: 12px 10px 12px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

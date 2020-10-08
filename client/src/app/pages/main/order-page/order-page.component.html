@@ -1,0 +1,65 @@
+<div class="order-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1 *ngIf="isOrder">Order</h1>
+      <h1 *ngIf="!isOrder">
+        <a routerLink="/order">Order </a>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        Add positions
+      </h1>
+    </div>
+
+    <div class="add-order-btn">
+      <button (click)="openModal()" [disabled]="orderService.list.length === 0" mat-raised-button color="accent">Cart</button>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="cards">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div #modal class="modal">
+  <div class="modal-content">
+    <h4 class="mb1">Your order</h4>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let item of orderService.list">
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.cost}}</td>
+        <td><button class="remove-table-btn" mat-flat-button color="warn" (click)="removePosition(item)">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="order-total">
+      <p>Total price: <strong>{{orderService.price}} $</strong></p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="cancel-btn"
+      mat-flat-button
+      color="warn"
+      (click)="cancel()"
+      [disabled]="pending"
+    >Cancel</button>
+    <button
+      class="submit-btn"
+      mat-flat-button
+      color="accent"
+      (click)="submit()"
+      [disabled]="orderService.list.length === 0 || pending"
+    >Submit</button>
+  </div>
+</div>

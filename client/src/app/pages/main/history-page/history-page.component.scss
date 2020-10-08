@@ -1,0 +1,45 @@
+
+.history-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.add-category-btn button {
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.add-category-btn button.filtered {
+  background: #dc3545;;
+}
+
+.history-page .page-content {
+  margin: 70px auto;
+}
+
+.page-btn {
+  margin: 40px auto;
+}
+
+.empty-data {
+  margin: 250px auto;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  padding: 25px 10px 10px 10px;
+  width: 300px;
+  background: #FF4081;
+  color: white;
+}

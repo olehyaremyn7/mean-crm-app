@@ -1,0 +1,74 @@
+<div class="table">
+  <table mat-table [dataSource]="orders" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> № </th>
+      <td mat-cell *matCellDef="let order"> {{order.order}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+      <td mat-cell *matCellDef="let order"> {{order.date | date: 'dd.MM.yyyy'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+      <td mat-cell *matCellDef="let order">{{order.date | date:'HH:mm:ss'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+      <td mat-cell *matCellDef="let order">{{price(order)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let order">
+        <button (click)="openModal(order)" class="table-btn" mat-raised-button color="accent" >Open</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <div class="modal" #modal>
+    <div class="modal-content" *ngIf="order">
+      <h4 class="mb1">Заказ №{{order.order}}</h4>
+      <table>
+
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let item of order.list">
+          <td>{{item.name}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.cost}}</td>
+        </tr>
+        </tbody>
+
+      </table>
+      <div class="order-total">
+        <p>Total price: <strong>{{price(order)}} $</strong></p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        class="close-btn"
+        mat-flat-button
+        color="warn"
+        (click)="close()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  font-size: 15px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-style: none;
+}
+
+.table-btn {
+  padding: 10px 5px 10px 5px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+.modal {
+  margin: 200px auto;
+  width: 700px;
+  height: 450px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.modal-content h4 {
+  margin: 30px auto 40px 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+.modal-content table {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 50px auto auto 25px;
+  max-width: 590px;
+}
+
+.modal-content .order-total {
+  margin: 40px auto auto 27px;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.modal-footer button {
+  right: 7.5%;
+}
+
+.modal-footer .close-btn {
+  padding: 12px 10px 12px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

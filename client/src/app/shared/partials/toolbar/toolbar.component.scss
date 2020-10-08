@@ -1,0 +1,44 @@
+mat-toolbar {
+  width: 100%;
+}
+
+mat-toolbar-row img {
+  width: 65px;
+  height: 35px;
+  margin-left: 12px;
+  margin-top: -5px;
+}
+
+mat-toolbar-row span {
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+mat-toolbar-row span a {
+  text-decoration: none;
+  color: white;
+}
+
+mat-toolbar ul {
+  display: flex;
+  margin-left: 77%;
+  padding-left: 10px;
+  list-style: none;
+}
+
+mat-toolbar ul .li-btn {
+  margin-left: 10px;
+}
+
+mat-toolbar ul li.active button {
+  cursor: default;
+  //background: #3a4eb2;
+}
+
+mat-toolbar ul li button {
+  margin: 0 0.50rem;
+  font-size: 15px;
+}
+
+
+
